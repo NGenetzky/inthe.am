@@ -10,9 +10,13 @@ functionally essential for doing much of anything with Inthe.AM.
 1. Go to `Google's developer console <https://console.developers.google.com/project>`_.
 2. Create a new project.
 3. From within your project, create a new "Client ID" by going to
-   "APIs & Auth" > "Credentials" and clicking on the "Create New Client ID"
-   button.
+   "APIs & Services" > "Credentials" and clicking on the "Create Credentials"
+   button. ([url](https://console.developers.google.com/apis/credentials))
 4. Select "Web Application"
+
+TODO: "Create OAuth client ID"?
+https://console.developers.google.com/apis/credentials/oauthclient
+
 5. Enter the following for 'Authorized Javascript Origins'::
 
     http://127.0.0.1
@@ -32,4 +36,3 @@ functionally essential for doing much of anything with Inthe.AM.
     want to close it, run ``source environment_variables.sh`` to update your
     environment with the environment variables you've set, and start the
     ``runserver`` once again.
-
