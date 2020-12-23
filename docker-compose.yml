@@ -65,7 +65,9 @@ services:
       - .env
       - .private.env
     ports:
-      - "25:8025"
+      # - "25:8025"
+      # Limit to localhost only:
+      - "127.0.0.1:25:8025"
     volumes:
       - ./:/data/web
       - task-data:/task_data
@@ -93,8 +95,11 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
       context: ./
     ports:
-      - "80:80"
-      - "443:443"
+      # - "80:80"
+      # - "443:443"
+      # Limit to localhost only:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
     volumes:
       - ./docker/nginx/secrets:/certificates
       - static-assets:/app
@@ -128,7 +133,9 @@ services:
       dockerfile: ./docker/taskd/Dockerfile
       context: ./
     ports:
-      - "53589:53589"
+      # - "53589:53589"
+      # Limit to localhost only:
+      - "127.0.0.1:53589:53589"
     networks:
       - backend
     links:
